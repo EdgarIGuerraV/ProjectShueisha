@@ -4,6 +4,7 @@ from django.template.defaultfilters import slugify
 from ckeditor.fields import RichTextField
 
 
+#Creacion de tablas y datos a almacenar
 class Skill(models.Model):
     class Meta:
         verbose_name_plural = 'Skills'
