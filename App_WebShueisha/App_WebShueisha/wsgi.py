@@ -1,5 +1,5 @@
 """
-WSGI config for resume_demo project.
+WSGI config for App_WebShueisha project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "resume_demo.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "App_WebShueisha.settings")
 
 application = get_wsgi_application()
