@@ -27,8 +27,7 @@
                             <li class="nav-item"><a class="nav-link" href="{% url 'main:home' %}">Home</a></li>
                             
                             <li class="nav-item"><a class="nav-link" href="{% url 'main:contact' %}">Login</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'main:blogs' %}">Blogs</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'main:reviews' %}">Reviews</a></li>
+                        
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
@@ -49,12 +48,14 @@
             </nav>
             <!-- Page Content-->
             <section class="py-5">
+                {% for obj in object_list %}
                 <div class="container px-5">
-                    <h1 class="fw-bolder fs-5 mb-4">Reviews</h1>
+                    <h1 class="fw-bolder fs-5 mb-4"></h1>
                     <div class="card border-0 shadow rounded-3 overflow-hidden">
+                        
                         <div class="card-body p-0">
                             <div class="row gx-0">
-                                {% for obj in object_list %}
+                                
                                 <div class="col-lg-6 col-xl-5 py-lg-5">
                                     <div class="p-4 p-md-5">
                                         <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
@@ -67,11 +68,13 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-xl-7"><div class="bg-featured-blog" style="background-image: url('https://dummyimage.com/700x350/343a40/6c757d')"></div></div>
-                                {% endfor %}
+                               
                             </div>
                         </div>
+                       
                     </div>
                 </div>
+                {% endfor %}
             </section>
             <section class="py-5 bg-light">
                 <div class="container px-5">
