@@ -34,7 +34,7 @@ class BlogForm(forms.ModelForm):
 		widget=forms.TextInput(attrs={
 		'placeholder': '*Full name...',
 	}))
-	decription = forms.CharField(max_length=500, required=True,
+	description = forms.CharField(max_length=500, required=True,
 		widget=forms.TextInput(attrs={
 		'placeholder': '*Description...',
 	}))
@@ -58,7 +58,7 @@ class ReviewsForm(forms.ModelForm):
 		widget=forms.TextInput(attrs={
 		'placeholder': '*Full name...',
 	}))
-	decription = forms.CharField(max_length=500, required=True,
+	description = forms.CharField(max_length=500, required=True,
 		widget=forms.TextInput(attrs={
 		'placeholder': '*Description...',
 	}))
