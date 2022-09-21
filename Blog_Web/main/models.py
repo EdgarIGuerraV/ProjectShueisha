@@ -3,7 +3,8 @@ from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
 from ckeditor.fields import RichTextField
 
-#creando las clases de los models
+#creando las tablas en las que se guardara la informacion de nuestra aplicacion
+
 
 class UserProfile(models.Model):
 
@@ -36,6 +37,7 @@ class ContactProfile(models.Model):
         return f'{self.name}'
 
 
+#Tabla destinada al almacenamiento de archivos multimedia
 class Media(models.Model):
 
     class Meta:
@@ -55,6 +57,7 @@ class Media(models.Model):
     def __str__(self):
         return self.name
 
+#Tabla destinada a almacenar los portafolios
 class Portfolio(models.Model):
 
     class Meta:
@@ -80,7 +83,7 @@ class Portfolio(models.Model):
     def get_absolute_url(self):
         return f"/portfolio/{self.slug}"
 
-
+#Tabla destinada a almacenar los Blogs
 class Blog(models.Model):
 
     class Meta:
@@ -108,6 +111,7 @@ class Blog(models.Model):
     def get_absolute_url(self):
         return f"/blog/{self.slug}"
 
+#Tabla destinada a almacenar las reviews
 class Reviews(models.Model):
 
     class Meta:

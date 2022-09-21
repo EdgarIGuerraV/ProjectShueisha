@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Manga&Blogs--Blog Creator</title>
+        <title>Manga&Blogs--Register</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}" />
         <!-- Bootstrap icons-->
@@ -53,8 +53,8 @@
                     <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
                         <div class="text-center mb-5">
                             <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
-                            <h1 class="fw-bolder">Crea un Blog</h1>
-                            <p class="lead fw-normal text-muted mb-0">Contribuye a la comunidad con nosotros!!</p>
+                            <h1 class="fw-bolder">Registro</h1>
+                            <p class="lead fw-normal text-muted mb-0">Crea un usuario</p>
                         </div>
                         <div class="row gx-5 justify-content-center">
                             <div class="col-lg-8 col-xl-6">
@@ -68,35 +68,29 @@
                                 <form id="contactForm" data-sb-form-api-token="API_TOKEN" method="post" enctype="multipart/form-data">
                                     {% csrf_token %}
                                     <!-- Name input-->
-                                   <div class="form-floating mb-3">
-                                    <input class="form-control" id="name" name="author" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                    <label for="name">Autor</label>
-                                    <div class="invalid-feedback" data-sb-feedback="name:required">Ingrese el autor de la review.</div>
-                                </div>
-                                <!-- Email address input-->
-                                <div class="form-floating mb-3">
-                                    <input class="form-control" id="email" name="name" type="text" placeholder="name@example.com" data-sb-validations="required,email" />
-                                    <label for="email">Titulo</label>
-                                    <div class="invalid-feedback" data-sb-feedback="email:required">Ingrese el Titulo</div>
-                                    
-                                </div>
-                                <!-- Phone number input-->
-                                <div class="form-floating mb-3">
-                                    <input class="form-control" id="phone" name="description" type="text" placeholder="(123) 456-7890" data-sb-validations="required" />
-                                    <label for="phone">Description</label>
-                                    <div class="invalid-feedback" data-sb-feedback="phone:required">Ingrese una descripción</div>
-                                </div>
-                                <!-- Message input-->
-                                <div class="form-floating mb-3">
-                                    <textarea class="form-control" id="message" name="body" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                                    <label for="message">Body</label>
-                                    <div class="invalid-feedback" data-sb-feedback="message:required">Agregue el cuerpo de la Review</div>
-                                </div>
-                                <div>
-                                        <label for="image">Image</label>
-                                        {{form.image}}
-                                        <br>
-                                        <br>
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="name" name="username" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                        <label for="name">Nombre de usuario</label>
+                                        <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                                    </div>
+                                    <!-- Email address input-->
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="email" name="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                                        <label for="email">Correo electrónico</label>
+                                        <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                                        <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                                    </div>
+                                    <!-- Phone number input-->
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="phone" name="password1" type="text" placeholder="(123) 456-7890" data-sb-validations="required" />
+                                        <label for="phone">Ingrese su contraseña</label>
+                                        <div class="invalid-feedback" data-sb-feedback="phone:required">A password is required.</div>
+                                    </div>
+                                    <!-- Message input-->
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="phone" name="password2" type="text" placeholder="(123) 456-7890" data-sb-validations="required" />
+                                        <label for="phone">Verifique su contraseña</label>
+                                        <div class="invalid-feedback" data-sb-feedback="phone:required">A  password is required.</div>
                                     </div>
                                     <!-- Submit success message-->
                                     <!---->
@@ -116,13 +110,13 @@
                                     <!-- an error submitting the form-->
                                     <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                                     <!-- Submit Button-->
-                                    <div class="d-grid"><button class="btn btn-primary btn-lg" id="submitButton" type="submit">Subir Blog</button></div>
+                                    <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Crear Cuenta</button></div>
                                 </form>
                             </div>
                         </div>
                     </div>
+                    <!-- Contact cards-->
                     
-                   
                 </div>
             </section>
         </main>

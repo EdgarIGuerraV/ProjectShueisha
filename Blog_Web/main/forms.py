@@ -2,6 +2,11 @@ from importlib.metadata import requires
 from django import forms
 from .models import Blog, ContactProfile, Reviews
 
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+
+#Registro de los forms que tomaran la informacion ingresada en la aplicacion
+
 
 class ContactForm(forms.ModelForm):
 
@@ -23,7 +28,13 @@ class ContactForm(forms.ModelForm):
 	class Meta:
 		model = ContactProfile
 		fields = ('name', 'email', 'message',)
+#Form encargado de crear nuevos usuarios 
+class CreateUserForm(UserCreationForm):
+	class Meta:
+		model = User
+		fields = ['username', 'email', 'password1', 'password2']
 
+#Form encargado de crear nuevos blogs desde la propia aplicación
 class BlogForm(forms.ModelForm):
 
 	author = forms.CharField(max_length=200, required=True,
@@ -48,6 +59,7 @@ class BlogForm(forms.ModelForm):
 		model = Blog
 		fields =['author','name', 'description', 'body', 'image']
 
+#Form encargado de crear nuevas reviews desde la misma aplicacion
 class ReviewsForm(forms.ModelForm):
 
 	author = forms.CharField(max_length=200, required=True,
